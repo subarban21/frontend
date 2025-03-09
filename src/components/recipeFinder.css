@@ -1,4 +1,4 @@
-/* Ensure All Text is White */
+/* Forcing all pages to have a white font for the text! */
 * {
   color: #ffffff !important;
 }
@@ -22,16 +22,6 @@ html, body {
   padding-top: 20px;
 }
 
-/* Logo Styling */
-.logo-container {
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-.recipe-logo {
-  max-width: 200px;
-  height: auto;
-}
 
 /* Page Content */
 .page-container {
@@ -86,14 +76,14 @@ a:hover {
   text-decoration: underline;
 }
 
-/* Add Recipe Button */
+/* Add Recipe Button styling */
 .add-recipe-container {
   text-align: center;
   margin-bottom: 20px;
 }
 
 .add-recipe-btn {
-  background-color: #ff3b3b; /* Red */
+  background-color: hsl(0, 45%, 26%);
   border: none;
   padding: 12px 18px;
   border-radius: 5px;
@@ -104,12 +94,12 @@ a:hover {
 }
 
 .add-recipe-btn:hover {
-  background-color: #ff6666;
+  background-color: #12682c;
 }
 
 .action-buttons .btn {
-  padding: 6px 12px; /* Reduce padding */
-  font-size: 14px; /* Reduce font size */
+  padding: 6px 12px;
+  font-size: 14px; 
   border-radius: 4px;
   text-align: center;
   display: inline-block;
@@ -129,7 +119,7 @@ a:hover {
 }
 
 .edit-btn:hover {
-  background-color: #006bb3;
+  background-color: hsl(61, 53%, 41%);
 }
 
 .delete-btn {
@@ -147,9 +137,9 @@ a:hover {
   background-color: #990000;
 }
 
-/* General Button Styling */
+
 button, .btn {
-  background-color: #70bce2;
+  background-color: hwb(200 13% 55%);
   border: none;
   padding: 10px 15px;
   cursor: pointer;
@@ -173,7 +163,7 @@ button, .btn {
   text-decoration: underline;
 }
 
-/* Form Containers */
+/* Containers for the different pages */
 .edit-container, .form-container {
   background: #1e1e1e;
   padding: 30px;
@@ -184,7 +174,7 @@ button, .btn {
   text-align: center;
 }
 
-/* Input Fields */
+/* Text fields */
 input {
   width: 100%;
   padding: 10px;
