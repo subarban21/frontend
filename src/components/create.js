@@ -1,7 +1,9 @@
 
 import React, { useState } from "react";
 import { useNavigate } from "react-router";
- 
+import "./recipeFinder.css"
+
+
 export default function Create() {
  const [form, setForm] = useState({
    name: "",
@@ -68,7 +70,7 @@ export default function Create() {
            className="form-control"
            id="ingredients"
            value={form.ingredients}
-           onChange={(e) => updateForm({ position: e.target.value })}
+           onChange={(e) => updateForm({ ingredients: e.target.value })}
          />
        </div>
        <div className="form-group">
@@ -78,7 +80,7 @@ export default function Create() {
            className="form-control"
            id="url"
            value={form.url}
-           onChange={(e) => updateForm({ position: e.target.value })}
+           onChange={(e) => updateForm({ url: e.target.value })}
          />
        </div>
        <div className="form-group">
@@ -88,7 +90,7 @@ export default function Create() {
            className="form-control"
            id="cookTime"
            value={form.cookTime}
-           onChange={(e) => updateForm({ position: e.target.value })}
+           onChange={(e) => updateForm({ cookTime: e.target.value })}
          />
        </div>
        <div className="form-group">
@@ -98,7 +100,7 @@ export default function Create() {
            className="form-control"
            id="recipeYield"
            value={form.recipeYield}
-           onChange={(e) => updateForm({ position: e.target.value })}
+           onChange={(e) => updateForm({ recipeYield: e.target.value })}
          />
        </div>
        <div className="form-group">
@@ -108,7 +110,7 @@ export default function Create() {
            className="form-control"
            id="datePublished"
            value={form.datePublished}
-           onChange={(e) => updateForm({ position: e.target.value })}
+           onChange={(e) => updateForm({ datePublished: e.target.value })}
          />
        </div>
        <div className="form-group">
@@ -118,7 +120,7 @@ export default function Create() {
            className="form-control"
            id="prepTime"
            value={form.prepTime}
-           onChange={(e) => updateForm({ position: e.target.value })}
+           onChange={(e) => updateForm({ prepTime: e.target.value })}
          />
        </div>
        <div className="form-group">
@@ -128,7 +130,7 @@ export default function Create() {
            className="form-control"
            id="description"
            value={form.description}
-           onChange={(e) => updateForm({ position: e.target.value })}
+           onChange={(e) => updateForm({ description: e.target.value })}
          />
        </div>
        

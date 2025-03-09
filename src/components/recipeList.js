@@ -1,22 +1,24 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import "./recipeFinder.css"
+
  
 const Recipe = (props) => (
- <tr>
-   <td>{props.recipe.name}</td>
-   <td>{props.recipe.description}</td>
-   <td>{props.recipe.url}</td>
-   <td>
-     <Link className="btn btn-link" to={`/edit/${props.recipe._id}`}>Edit</Link> |
-     <button className="btn btn-link"
-       onClick={() => {
-         props.deleteRecipe(props.recipe._id);
-       }}
-     >
-       Delete
-     </button>
-   </td>
- </tr>
+  <tr>
+    <td>
+      <Link to={`/recipes/${props.recipe._id}`}>{props.recipe.name}</Link> {/* Updated for navigation */}
+    </td>
+    <td>{props.recipe.description}</td>
+    <td>{props.recipe.url}</td>
+    <td className="action-buttons">
+    <Link className="btn edit-btn" to={`/edit/${props.recipe._id}`}>Edit</Link>
+    <button className="btn delete-btn"
+      onClick={() => props.deleteRecipe(props.recipe._id)}
+    >
+      Delete
+  </button>
+</td>
+  </tr>
 );
  
 export default function RecordList() {
@@ -67,19 +69,27 @@ export default function RecordList() {
  
  // This following section will display the table with the records of individuals.
  return (
-   <div>
-     <h3>Recipe List</h3>
-     <table className="table table-striped" style={{ marginTop: 20 }}>
-       <thead>
-         <tr>
-           <th>Name</th>
-           <th>Description</th>
-           <th>URL</th>
-           <th>Action</th>
-         </tr>
-       </thead>
-       <tbody>{recipeList()}</tbody>
-     </table>
-   </div>
- );
+  <div className="page-container">
+    <h3 className="recipe-title">Sumeet's Recipe Finder</h3>
+    {/* Add Recipe Button */}
+    <div className="add-recipe-container">
+      <Link to="/create" className="add-recipe-btn">Add Recipe</Link>
+    </div>
+
+    {/* Centered Recipe List */}
+    <div className="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th>URL</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>{recipeList()}</tbody>
+      </table>
+    </div>
+  </div>
+);
 }

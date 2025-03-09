@@ -1,24 +1,25 @@
 import React from "react";
-import './App.css';
-// We use route in order to define the different routes of our application
+import "./components/recipeFinder.css"; // Import the updated CSS
 import { Route, Routes } from "react-router-dom";
 
-// we import al components we need in our app
-
-import Navbar from "./components/navbar";
+// Import components
+//import Navbar from "./components/navbar";
 import Edit from "./components/edit";
 import Create from "./components/create";
-import RecipeList from "./components/recipeList"
+import RecipeList from "./components/recipeList";
+import RecipeDetails from "./components/recipeDetails";
 
 const App = () => {
   return (
-    <div>
-      <Navbar />
-      <Routes>
-        <Route exact path="/" element={<RecipeList />} />
-        <Route path="/edit/:id" element={<Edit />} />
-        <Route path="/create" element={<Create />} />
-      </Routes>
+    <div className="app-container">
+      <div className="container">
+        <Routes>
+          <Route exact path="/" element={<RecipeList />} />
+          <Route path="/edit/:id" element={<Edit />} />
+          <Route path="/create" element={<Create />} />
+          <Route path="/recipes/:id" element={<RecipeDetails />} />
+        </Routes>
+      </div>
     </div>
   );
 };
